@@ -11,6 +11,33 @@ namespace Equalizer
     /// </summary>
     static class Structure
     {
+        /// <summary>
+        /// Only for tests, 
+        /// </summary>
+        /// <returns></returns>
+        public static List<Variable> InitializeList()
+        {
+            var a = new Variable();
+            a.Name = "test";
+            a.Value = 12;
+            var List = new List<Variable>();
+            List.Add(a);
+            List.Add(a);
+            List.Add(a);
+            return List;
 
+        }
+        /// <summary>
+        /// When button cicked this function fires, it set it to return list but i dont know why i did that 
+        /// </summary>
+        /// <param name="Input"></param>
+        /// <param name="List"></param>
+        /// <returns></returns>
+        public static List<Variable> UpdateList(Variable Input, List<Variable> List)
+        {
+            List.Add(Input);
+            return List;
+        }
+       
     }
 }

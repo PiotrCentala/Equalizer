@@ -6,7 +6,44 @@
         xmlns:local="clr-namespace:Equalizer"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+  
+
+        <Border Padding="10">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Grid.Row="0" Text="Variable Name" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="1" Grid.Row="0" Text="Variable Value" HorizontalAlignment="Center"/>
+                <TextBox Grid.Column="0" Grid.Row="1"  Text="{Binding Path=VariableInput.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Path=VariableInput.Value, UpdateSourceTrigger=PropertyChanged,StringFormat={}{##.##}}"/>
+                <Button Content="Submit" Grid.Column="2" Grid.Row="1" Command="{Binding ClickCommand}"/>
+            </Grid>
+            <ItemsControl ItemsSource="{Binding VariablesList}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>                      
+
+                            <Grid >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{Binding Name}" Grid.Column="0"/>
+                                <TextBlock Text="{Binding Value}" Grid.Column="1"/>
+                            </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+            
+        </StackPanel>
+
+        </Border>
+ 
 </Window>
