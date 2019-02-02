@@ -20,6 +20,7 @@ namespace Equalizer
             var a = new Variable();
             a.Name = "test";
             a.Value = 12;
+            
             var List = new List<Variable>();
             List.Add(a);
             List.Add(a);
@@ -35,9 +36,14 @@ namespace Equalizer
         /// <returns></returns>
         public static List<Variable> UpdateList(Variable Input, List<Variable> List)
         {
+            
             List.Add(Input);
             return List;
         }
-       
+       public static string VariableToLatex(string name, float value)
+        {
+            string a = name + "=" + value.ToString();
+            return a;
+        }
     }
 }

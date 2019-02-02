@@ -28,3 +28,6 @@ C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\obj\Debug\Equalize
 C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\obj\Debug\Equalizer.csproj.CoreCompileInputs.cache
 C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\obj\Debug\Equalizer.exe
 C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\obj\Debug\Equalizer.pdb
+C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\bin\Debug\WpfMath.dll
+C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\bin\Debug\WpfMath.pdb
+C:\Users\peter\Documents\GitHub\Equalizer\Equalizer\Equalizer\obj\Debug\Equalizer.csproj.CopyComplete

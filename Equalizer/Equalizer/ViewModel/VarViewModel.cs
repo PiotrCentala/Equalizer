@@ -20,8 +20,13 @@ namespace Equalizer
         {
             _canExecute = true;
             VariableInput = new Variable();
+            LatexTest = new string('a',1);
+            LatexTest = "a_12=12";
+
+
             VariablesList = new ObservableCollection<Variable>(Structure.InitializeList());
         }
+        public string LatexTest { get; set; }
         /// <summary>
         /// Input given by user
         /// </summary>
