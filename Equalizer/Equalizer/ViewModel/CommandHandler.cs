@@ -27,6 +27,7 @@ namespace Equalizer
         public void Execute(object parameter)
         {
             _action();
+            
         }
     }
 }
