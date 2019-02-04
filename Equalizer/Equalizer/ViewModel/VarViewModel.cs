@@ -18,7 +18,8 @@ namespace Equalizer
         /// </summary>
         public VarViewModel()
         {
-            _canExecute = true;
+            
+            
             VariableInput = new Variable();
             LatexTest = new string('a',1);
             LatexTest = "a_12=12";
@@ -41,6 +42,11 @@ namespace Equalizer
         public Variable VariableInput { get; set; }
 
         /// <summary>
+        /// It indicates witch variable has to be deleted 
+        /// </summary>
+        public Variable SelectedVar { get; set; }
+
+        /// <summary>
         /// list containing all equations given by user
         /// </summary>
         public ObservableCollection<Equation> EquationsList { get; set; }
@@ -48,32 +54,29 @@ namespace Equalizer
         /// list containing all variables given by user
         /// </summary>
         public ObservableCollection<Variable> VariablesList { get; set; }
-        /// <summary>
-        /// This variable is gotten when button is clicked
-        /// </summary>
-        private ICommand _clickCommand;
+        
         /// <summary>
         /// handling response for private _clickCommand question, triggers Action
-        /// </summary>
-        public ICommand ClickCommand
-        {
-            get
-            {
-                return _clickCommand ?? (_clickCommand = new CommandHandler(() => ButtonClicked(), _canExecute));
-            }
-        }
-        /// <summary>
-        /// when true, its possible to click a button
-        /// </summary>
-        private bool _canExecute;
+        /// </summary>                 
+        public ICommand ClickCommand { get { return new CommandHandler(() => ButtonClicked()); } }
+       
+        
+        public ICommand DeleteCommand { get { return new CommandHandler(() => DeleteItem()); } }
+
         /// <summary>
         /// Action triggered when button clicked
         /// </summary>
         public void ButtonClicked()
         {
- 
+            
+            //List<float> list = new List<float>(new float[]{ 460, 12, 420, 5 });
+            //PythonFun.RunPython("pi*((dk+a)^2-(d1+2*r)^2)/4",list, "dk+a+d1+r", 6);
             VariablesList.Add( Structure.UpdateList(VariableInput, VariablesList.ToList()).Last());
             VariableInput = new Variable();
+        }
+        public void DeleteItem()
+        {
+         this.VariablesList.Remove(this.SelectedVar);
         }
     }
 }

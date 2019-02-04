@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -40,10 +42,17 @@ namespace Equalizer
             List.Add(Input);
             return List;
         }
+        /// <summary>
+        /// Function converts Variables to Latex form
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
        public static string VariableToLatex(string name, float value)
         {
             string a = name + "=" + value.ToString();
             return a;
         }
+       
     }
 }
